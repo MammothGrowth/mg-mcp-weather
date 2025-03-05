@@ -9,9 +9,29 @@ A Model Context Protocol (MCP) server that provides weather information using th
 
 ## Installation
 
+### Using uvx (Recommended)
+
+[uvx](https://github.com/astral-sh/uv) is a fast, reliable Python package installer and resolver:
+
+```bash
+# Install uvx if you haven't already
+curl -LsSf https://astral.sh/uv/install.sh | sh
+# On Windows: powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+# Install mg-mcp-weather directly from GitHub
+uvx install git+https://github.com/benwilson512/mg-mcp-weather.git
+
+# Or install from a local clone
+git clone https://github.com/benwilson512/mg-mcp-weather.git
+cd mg-mcp-weather
+uvx install -e .
+```
+
+### Using pip
+
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/mg-mcp-weather.git
+git clone https://github.com/benwilson512/mg-mcp-weather.git
 cd mg-mcp-weather
 
 # Create and activate a virtual environment
@@ -26,8 +46,14 @@ pip install -e .
 
 ### Running the server directly
 
+After installation with uvx or pip, you can run the server using:
+
 ```bash
-python -m mg_mcp_weather.server
+# If installed with entry point
+mg-mcp-weather
+
+# Or using the Python module
+python -m mg_mcp_weather
 ```
 
 ### Using with Claude Desktop
@@ -43,8 +69,20 @@ python -m mg_mcp_weather.server
 {
   "mcpServers": {
     "weather": {
-      "command": "python",
-      "args": ["-m", "mg_mcp_weather.server"]
+      "command": "mg-mcp-weather"
+    }
+  }
+}
+```
+
+Alternatively, if using uvx:
+
+```json
+{
+  "mcpServers": {
+    "weather": {
+      "command": "uvx",
+      "args": ["run", "mg-mcp-weather"]
     }
   }
 }
@@ -55,7 +93,10 @@ python -m mg_mcp_weather.server
 ### Using with MCP Inspector
 
 ```bash
-npx @modelcontextprotocol/inspector python -m mg_mcp_weather.server
+npx @modelcontextprotocol/inspector mg-mcp-weather
+
+# Or if you prefer:
+npx @modelcontextprotocol/inspector uvx run mg-mcp-weather
 ```
 
 ## Tools

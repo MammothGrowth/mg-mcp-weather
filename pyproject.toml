@@ -29,3 +29,10 @@ build-backend = "setuptools.build_meta"
 where = ["."]
 include = ["mg_mcp_weather*"]
 
+[project.scripts]
+mg-mcp-weather = "mg_mcp_weather.__main__:main"
+
+[project.urls]
+"Homepage" = "https://github.com/benwilson512/mg-mcp-weather"
+"Bug Tracker" = "https://github.com/benwilson512/mg-mcp-weather/issues"
+
