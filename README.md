@@ -19,10 +19,10 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 # On Windows: powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 
 # Install mg-mcp-weather directly from GitHub
-uvx install git+https://github.com/benwilson512/mg-mcp-weather.git
+uvx install git+https://github.com/MammothGrowth/mg-mcp-weather.git
 
 # Or install from a local clone
-git clone https://github.com/benwilson512/mg-mcp-weather.git
+git clone https://github.com/MammothGrowth/mg-mcp-weather.git
 cd mg-mcp-weather
 uvx install -e .
 ```
@@ -31,7 +31,7 @@ uvx install -e .
 
 ```bash
 # Clone the repository
-git clone https://github.com/benwilson512/mg-mcp-weather.git
+git clone https://github.com/MammothGrowth/mg-mcp-weather.git
 cd mg-mcp-weather
 
 # Create and activate a virtual environment
